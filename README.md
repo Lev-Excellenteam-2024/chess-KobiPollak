@@ -1,1 +1,1 @@
-# Chess-C-
+# Chess
