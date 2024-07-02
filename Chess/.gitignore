@@ -1,8 +1,14 @@
 # Ignore all .vs folders
+.vs/
 **/.vs/
 
-# Ignore all .out folders
-**/.out/
+# Ignore all out folders
+out/
+**/out/
+
+# Ignore CppProperties.json
+CppProperties.json
+../CppProperties.json
 
 # Ignore build artifacts
 /build/
