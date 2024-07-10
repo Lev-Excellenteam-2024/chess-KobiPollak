@@ -1,11 +1,15 @@
 // Chess 
 #include "Chess.h"
+#include "Board.h"
 
 int main()
 {
-	string board = "RNBQKBNRPPPPPPPP################################pppppppprnbqkbnr"; 
-//	string board = "##########K###############################R#############r#r#####";
+	int canMove;
+	//string board = "RNBQKBNRPPPPPPPP################################pppppppprnbqkbnr"; 
+	string board = "#B###Q####K###b#####q####k###B########R###R#############r#r#####";
+	/*string board = "####b#####K#############q#############B###R#####Q#######r#r#####";*/
 	Chess a(board);
+	Board bor(board);
 	int codeResponse = 0;
 	string res = a.getInput();
 	while (res != "exit")
@@ -26,12 +30,21 @@ int main()
 
 		/**/ 
 		{ // put your code here instead that code
-			cout << "code response >> ";
-			cin >> codeResponse;
+			/*cout << "code response >> ";
+			cin >> codeResponse;*/
+			int startX, endX;
+			std::string startY, endY;
+			startY = res.substr(0, 1);
+			startX = res[1] - '0';
+			endY = res.substr(2, 1);
+			endX = res[3] - '0';
+			canMove = bor.movePiece(startX, startY, endX, endY, a.m_turn);
+			
 		}
 		/**/
 
-		a.setCodeResponse(codeResponse);
+		a.setCodeResponse(canMove);
+		//a.setCodeResponse(codeResponse);
 		res = a.getInput(); 
 	}
 
