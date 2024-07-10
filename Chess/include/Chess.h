@@ -12,7 +12,7 @@ const int _SIZE = 21;
 
 class Chess {
 	unsigned char m_board[_SIZE][_SIZE] = { 0 };
-	bool m_turn = true;
+	
 	string m_boardString;
 	string m_input;
 	string m_msg = "\n";
@@ -37,4 +37,5 @@ public:
 	Chess& operator=(const Chess&) = delete;
 	string getInput();
 	void setCodeResponse(int codeResponse);
+	bool m_turn = true;
 };
